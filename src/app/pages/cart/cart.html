@@ -1,0 +1,56 @@
+<section class="px-6 py-12 md:px-20">
+
+  <div class="mx-auto max-w-5xl">
+
+    <h1 class="mb-8 text-4xl font-black">
+      Mi Carrito
+    </h1>
+
+    @if (items.length === 0) {
+
+    <div class="rounded-xl border border-dashed p-8 text-center">
+
+      Tu carrito está vacío
+
+    </div>
+
+    }
+
+    @for (item of items; track item.product.id) {
+
+    <div class="mb-4 rounded-xl border bg-white p-5">
+
+      <h3 class="text-xl font-bold">
+        {{ item.product.nombre }}
+      </h3>
+
+      <p>
+        Cantidad: {{ item.quantity }}
+      </p>
+
+      <p>
+        Precio unitario:
+        ${{ item.product.precio }}
+      </p>
+
+      <p class="font-semibold">
+
+        Subtotal:
+        ${{ item.product.precio * item.quantity }}
+
+      </p>
+
+    </div>
+
+    }
+
+    <div class="mt-10 text-right text-3xl font-black">
+
+      Total:
+      ${{ items.reduce((total, item) => total + item.product.precio * item.quantity, 0) }}
+
+    </div>
+
+  </div>
+
+</section>

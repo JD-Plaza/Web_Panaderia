@@ -1,0 +1,40 @@
+<section class="px-6 py- md:px-0">
+
+  <div class="mx-auto max-w-7xl">
+
+    <h1 class="mb-8 text-4xl font-black">
+      Nuestros Productos
+    </h1>
+
+    <input type="text" placeholder="Buscar producto..." [(ngModel)]="filtro" (input)="filtrar()"
+      class="mb-6 w-full rounded-xl border p-3">
+
+    <div class="mb-8 flex flex-wrap gap-3">
+
+      @for (categoria of categorias; track categoria) {
+
+      <button (click)="categoriaSeleccionada = categoria; filtrar()"
+        class="rounded-full bg-amber-00 px-4 py- hover:bg-amber-00">
+
+        {{ categoria }}
+
+      </button>
+
+      }
+
+    </div>
+
+    <div class="grid grid-cols- gap-8 sm:grid-cols- lg:grid-cols-3">
+
+      @for (producto of productosFiltrados; track producto.id) {
+
+      <app-product-card [product]="producto">
+      </app-product-card>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

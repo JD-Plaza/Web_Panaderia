@@ -1,0 +1,42 @@
+<header class="sticky top-0 z-50 w-full border-b border-gray-00 bg-white/90 backdrop-blur-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <span class="text-3xl">🍞</span>
+      <h1 class="text-xl font-bold tracking-tight text-slate-900">
+        Dulce Aroma
+      </h1>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="hidden items-center gap-8 md:flex">
+      <a routerLink="/" class="font-medium text-slate-700 transition-colors hover:text-amber-600">
+        Inicio
+      </a>
+      <a routerLink="/productos" class="font-medium text-slate-700 transition-colors hover:text-amber-600">
+        Productos
+      </a>
+      <a routerLink="/nosotros" class="font-medium text-slate-700 transition-colors hover:text-amber-600">
+        Nosotros
+      </a>
+      <a routerLink="/contacto" class="font-medium text-slate-700 transition-colors hover:text-amber-600">
+        Contacto
+      </a>
+    </nav>
+
+    <!-- Acciones -->
+    <div class="flex items-center gap-4">
+      <button aria-label="Ver carrito" routerLink="/carrito"
+        class="flex h-0 w-0 items-center justify-center rounded-lg bg-amber-00 text-amber-700 transition-colors hover:bg-amber-00">
+        🛒
+      </button>
+
+      <button aria-label="Abrir menú"
+        class="flex h-0 w-0 items-center justify-center rounded-lg text-slate-700 hover:bg-slate-00 md:hidden">
+        ☰
+      </button>
+    </div>
+
+  </div>
+</header>

@@ -1,0 +1,32 @@
+<section class="px-6 py-0 md:px-0">
+
+  <div class="mx-auto max-w-7xl">
+
+    <div class="mb- flex items-center justify-between">
+
+      <h1 class="text-3xl font-bold">
+        Productos Destacados
+      </h1>
+
+      <a routerLink="/productos" class="font-semibold text-amber-600 hover:underline">
+
+        Ver todo →
+
+      </a>
+
+    </div>
+
+    <div class="grid grid-cols- gap-8 sm:grid-cols- lg:grid-cols-3">
+
+      @for (producto of productos; track producto.id) {
+
+      <app-product-card [product]="producto">
+      </app-product-card>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>
