@@ -7,17 +7,12 @@
     </h1>
 
     @if (items.length === 0) {
-
     <div class="rounded-xl border border-dashed p-8 text-center">
-
       Tu carrito está vacío
-
     </div>
-
     }
 
     @for (item of items; track item.product.id) {
-
     <div class="mb-4 rounded-xl border bg-white p-5">
 
       <h3 class="text-xl font-bold">
@@ -29,27 +24,46 @@
       </p>
 
       <p>
-        Precio unitario:
-        ${{ item.product.precio }}
+        Precio unitario: ${{ item.product.precio }}
       </p>
 
       <p class="font-semibold">
-
-        Subtotal:
-        ${{ item.product.precio * item.quantity }}
-
+        Subtotal: ${{ item.product.precio * item.quantity }}
       </p>
 
-    </div>
+      <button (click)="removeItem(item.product.id)"
+        class="mt-3 rounded-lg bg-red-500 px-4 py-2 text-white transition-colors hover:bg-red-600">
+        Eliminar
+      </button>
 
+    </div>
     }
 
+    @if(items.length > 0){
+
+    <button (click)="clearCart()" class="mb-6 rounded-lg bg-slate-800 px-4 py-2 text-white">
+
+      Vaciar carrito
+
+    </button>
+
+    }
+    @if (items.length > 0) {
     <div class="mt-10 text-right text-3xl font-black">
-
-      Total:
-      ${{ items.reduce((total, item) => total + item.product.precio * item.quantity, 0) }}
-
+      Total: ${{ items.reduce((total, item) => total + item.product.precio * item.quantity, 0) }}
     </div>
+    }
+
+
+    @if (items.length > 0) {
+
+    <a routerLink="/checkout" class="mt-4 inline-block rounded-xl bg-amber-600 px-6 py-3 text-white hover:bg-amber-700">
+
+      Proceder al pago
+
+    </a>
+
+    }
 
   </div>
 

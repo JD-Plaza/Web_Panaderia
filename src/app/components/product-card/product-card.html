@@ -13,28 +13,29 @@
       {{ product.descripcion }}
     </p>
 
-    <div class="flex items-center justify-between">
-
+    <div class="mb-4 flex items-center justify-between">
       <span class="text-2xl font-black text-amber-600">
         ${{ product.precio }}
       </span>
+    </div>
 
-      <button (click)="addToCart()" class="rounded-full bg-amber-600 p-3 text-white transition hover:bg-amber-700">
-
-        🛒
-
+    <!-- Botones de acción -->
+    <div class="flex gap-2">
+      <button (click)="viewProduct()"
+        class="flex-1 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100">
+        Ver Detalle
       </button>
 
+      <button (click)="addToCart()"
+        class="flex-1 rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-amber-600">
+        Agregar
+      </button>
     </div>
 
     @if (showMessage) {
-
-    <div class="mt-3 rounded-lg bg-green-100 p-2 text-sm text-green-700">
-
+    <div class="mt-3 rounded-lg bg-green-100 p-2 text-center text-sm text-green-700">
       ✅ Producto agregado al carrito
-
     </div>
-
     }
 
   </div>

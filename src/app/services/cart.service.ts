@@ -90,4 +90,13 @@ export class CartService {
     );
 
   }
+
+  getTotalItems(): number {
+
+    return this.items.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+
+  }
 }

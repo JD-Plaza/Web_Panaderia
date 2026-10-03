@@ -1,1 +1,113 @@
-<p>contact works!</p>
+<section class="px-6 py-12 md:px-20">
+
+  <div class="mx-auto max-w-3xl">
+
+    <h1 class="mb-8 text-4xl font-black">
+      Contacto
+    </h1>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+
+      <!-- Nombre -->
+
+      <div>
+
+        <label class="mb-2 block font-semibold">
+          Nombre
+        </label>
+
+        <input type="text" formControlName="nombre" class="w-full rounded-xl border p-3">
+
+        @if (
+        contactForm.get('nombre')?.invalid &&
+        contactForm.get('nombre')?.touched
+        ) {
+
+        <p class="mt-1 text-sm text-red-500">
+          El nombre es obligatorio.
+        </p>
+
+        }
+
+      </div>
+
+      <!-- Correo -->
+
+      <div>
+
+        <label class="mb-2 block font-semibold">
+          Correo
+        </label>
+
+        <input type="email" formControlName="correo" class="w-full rounded-xl border p-3">
+
+        @if (
+        contactForm.get('correo')?.invalid &&
+        contactForm.get('correo')?.touched
+        ) {
+
+        <p class="mt-1 text-sm text-red-500">
+          Debe ingresar un correo válido.
+        </p>
+
+        }
+
+      </div>
+
+      <!-- Teléfono -->
+
+      <div>
+
+        <label class="mb-2 block font-semibold">
+          Teléfono
+        </label>
+
+        <input type="text" formControlName="telefono" class="w-full rounded-xl border p-3">
+
+      </div>
+
+      <!-- Mensaje -->
+
+      <div>
+
+        <label class="mb-2 block font-semibold">
+          Mensaje
+        </label>
+
+        <textarea rows="5" formControlName="mensaje" class="w-full rounded-xl border p-3">
+        </textarea>
+
+        @if (
+        contactForm.get('mensaje')?.invalid &&
+        contactForm.get('mensaje')?.touched
+        ) {
+
+        <p class="mt-1 text-sm text-red-500">
+          El mensaje debe tener al menos 10 caracteres.
+        </p>
+
+        }
+
+      </div>
+
+      <button type="submit" class="rounded-xl bg-amber-600 px-6 py-3 text-white hover:bg-amber-700">
+
+        Enviar Mensaje
+
+      </button>
+
+    </form>
+
+    @if (enviado) {
+
+    <div class="mt-6 rounded-xl bg-green-100 p-4 text-green-700">
+
+      ✅ Mensaje enviado correctamente.
+
+    </div>
+
+    }
+
+  </div>
+
+</section>

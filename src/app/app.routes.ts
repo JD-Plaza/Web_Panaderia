@@ -4,8 +4,8 @@ import { Products } from './pages/products/products';
 import { About } from './components/about/about';
 import { Contact } from './pages/contact/contact';
 import { CartComponent } from './pages/cart/cart';
-
-
+import { ProductDetail } from './pages/product-detail/product-detail';
+import { Checkout } from './pages/checkout/checkout';
 export const routes: Routes = [
   {
     path: '',
@@ -14,6 +14,10 @@ export const routes: Routes = [
   {
     path: 'productos',
     component: Products
+  },
+  {
+    path: 'productos/:id',
+    component: ProductDetail
   },
   {
     path: 'nosotros',
@@ -26,5 +30,9 @@ export const routes: Routes = [
   {
     path: 'carrito',
     component: CartComponent
-  }
+  },
+  {
+  path: 'checkout',
+  component: Checkout
+}
 ];

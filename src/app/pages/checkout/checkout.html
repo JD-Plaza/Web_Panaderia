@@ -1,0 +1,42 @@
+<section class="px-6 py-12 md:px-20">
+
+  <div class="mx-auto max-w-3xl">
+
+    <h1 class="mb-8 text-4xl font-black">
+      Finalizar Compra
+    </h1>
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="finalizarCompra()" class="space-y-6">
+
+      <input type="text" placeholder="Nombre completo" formControlName="nombre" class="w-full rounded-xl border p-3">
+
+      <input type="email" placeholder="Correo electrónico" formControlName="correo"
+        class="w-full rounded-xl border p-3">
+
+      <input type="text" placeholder="Dirección" formControlName="direccion" class="w-full rounded-xl border p-3">
+
+      <input type="text" placeholder="Ciudad" formControlName="ciudad" class="w-full rounded-xl border p-3">
+
+      <input type="text" placeholder="Teléfono" formControlName="telefono" class="w-full rounded-xl border p-3">
+
+      <button type="submit" class="rounded-xl bg-green-600 px-6 py-3 text-white">
+
+        Confirmar Compra
+
+      </button>
+
+    </form>
+
+    @if (comprado) {
+
+    <div class="mt-6 rounded-xl bg-green-100 p-4 text-green-700">
+
+      ✅ Compra registrada correctamente
+
+    </div>
+
+    }
+
+  </div>
+
+</section>

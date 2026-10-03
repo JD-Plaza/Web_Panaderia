@@ -1,28 +1,23 @@
 <section class="bg-amber-50/40 px-6 py-16 md:px-20">
-
   <div class="mx-auto max-w-7xl">
 
     <div class="mb-12 text-center">
-
       <h2 class="mb-4 text-3xl font-bold">
         Nuestras Categorías
       </h2>
-
       <p class="text-slate-600">
         Encuentra tu antojo favorito
       </p>
-
     </div>
 
     <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
 
       @for (categoria of categorias; track categoria.nombre) {
-
       <div
         class="rounded-2xl border border-amber-100 bg-white p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
 
-        <div class="mb-4 text-5xl">
-          {{ categoria.icono }}
+        <div class="mb-4 flex justify-center text-amber-600">
+          <lucide-icon [img]="categoria.icono" [size]="48" [strokeWidth]="1.5"></lucide-icon>
         </div>
 
         <h3 class="font-bold">
@@ -34,11 +29,8 @@
         </p>
 
       </div>
-
       }
 
     </div>
-
   </div>
-
 </section>
